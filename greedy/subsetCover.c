@@ -1,0 +1,38 @@
+//incomplete
+#include <stdio.h>
+#include <conio.h>
+
+struct subset{
+    int n,cost;
+    int a[50];
+};
+
+void subsetCover(struct subset s[],int n,int u[],int m)
+{
+    
+}
+
+int main(){
+    int n,m;
+    printf("Enter the number of items: ");
+    scanf("%d",&m);
+    int u[m];
+    printf("Enter the value of items: ");
+    for(int i=0;i<m;i++){
+        scanf("%d",&u[i]);
+    }
+    printf("Enter the number of subsets: ");
+    scanf("%d",&n);
+    struct subset s[n];
+    for(int i=0;i<n;i++){
+        printf("Enter the cost of subset %d: ",i+1);
+        scanf("%d",&s[i].cost);
+        printf("Enter the number of items in subset %d: ",i+1);
+        scanf("%d",&s[i].n);
+        for(int j=0;j<s[i].n;j++){
+            printf("Enter the item %d: ",j+1);
+            scanf("%d",&s[i].a[j]);
+        }
+    }
+    subsetCover(s,n,u,m);
+}
