@@ -31,8 +31,6 @@ int min(int a, int b)
     return a < b ? a : b;
 }
 
-int dp[100][100] = {0};
-
 int coinchange(int a[], int n, int total)
 {
     if (total < 0)
@@ -61,3 +59,5 @@ int main()
     printf("Enter the total value required:\n");
     scanf("%d", &total);
     printf("The minimum required coins are %d", coinchange(a, n - 1, total));
+    return 0;
+}
