@@ -19,12 +19,13 @@ void optimal(int l[], int n)
     for (i = 0; i < n; i++)
     {
         sum = 0;
-        for (j = 0; j < i; j++)
+        for (j = 0; j <= i; j++)
         {
-            sum += l[i];
+            sum += l[j];
         }
         MRT += sum;
     }
+    cout<<MRT;
 
     MRT /= n;
 
