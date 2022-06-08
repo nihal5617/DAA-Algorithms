@@ -1,3 +1,4 @@
+# All DAA Algorithms code in c/cpp
 ## Divide and Conquer
 
 | ALgorithm                      | Link              |
@@ -18,4 +19,4 @@
 | Fractional Knapsack            | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/fractionalKnapsack.c">Click here<a/>|
 | Job Scheduling                 | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/jobScheduling.c">Click here<a/>|
 | Krushkals Algorithm            | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/krushkalsAlgorithm.c">Click here<a/>|
-| Optimal Storage                | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/optimalStorage.c">Click here<a/>|
+| Optimal Storage                | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/optimalStorage.cpp">Click here<a/>|
