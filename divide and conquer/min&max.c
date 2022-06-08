@@ -46,7 +46,6 @@ int main()
     printf("Enter the numbers : \n");
     for (i = 1; i <= num; i++)
         scanf("%d", &a[i]);
-
     max = a[0];
     min = a[0];
     maxmin(1, num);
