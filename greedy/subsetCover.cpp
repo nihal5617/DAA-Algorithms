@@ -1,58 +1,114 @@
-//incomplete
-#include <iostream>
-#include <set>
-#include <iterator>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-struct subset
+int diffSet(vector<int> u, vector<int> s)
 {
-    int n, cost;
-    int a[50];
-};
+    sort(s.begin(), s.end());
+    sort(u.begin(), u.end());
+    vector<int> diff;
+    set_difference(u.begin(), u.end(), s.begin(), s.end(), back_inserter(diff));
+    return diff.size();
+}
 
-void subsetCover(struct subset s[],int n,int u[],int m)
-{    
-    set<int> u1;
-    for(int i=0;i<m;i++)
-        u1.insert(u[i]);
-    set<int> s1;
-    for(int i=0;i<n;i++)
+int mini(float *array, int n)
+{
+    int index = 0;
+
+    for (int i = 1; i < n; i++)
+        if (array[i] < array[index])
+            index = i;
+
+    return index;
+}
+
+int subset(vector<int> u, vector<vector<int>> s, int *c, int n, int *arr)
+{
+    vector<int> sn;
+    float ratio[n] = {0};
+
+    int cost = 0;
+    while (u != sn)
     {
-        for(int j=0;j<s[i].n;j++)
+        for (int i = 0; i < n; i++)
         {
-            s1.insert(s[i].a[j]);
+            vector<int> set = s[i];
+            int x = diffSet(set, sn);
+            if (x != 0)
+                ratio[i] = c[i] / x;
+            else
+                ratio[i] = 999;
         }
+        int index = mini(ratio, n);
+        if (sn.size() == 0)
+            sn.insert(sn.end(), s[index].begin(), s[index].end());
+        else
+        {
+            for (int i = 0; i < s[index].size(); i++)
+            {
+                bool flag = false;
+                for (int j = 0; j <= sn.size(); j++)
+                    if (s[index][i] == sn[j])
+                    {
+                        flag = true;
+                        break;
+                    }
+                if (!flag)
+                    sn.push_back(s[index][i]);
+            }
+        }
+        arr[index] = 1;
+        cost = cost + c[index];
+        sort(sn.begin(), sn.end());
     }
+    cout << (u == sn);
+    return cost;
 }
 
 int main()
 {
-    int n, m;
-    printf("Enter the number of items: ");
-    scanf("%d", &m);
-    int u[m];
-    printf("Enter the value of items: ");
-    for (int i = 0; i < m; i++)
+    vector<int> u;
+    vector<vector<int>> s;
+    int un;
+    cout << "Enter no. of elements in universal set: ";
+    cin >> un;
+    cout << "Enter elements of universal set: ";
+    for (int i = 0; i < un; i++)
     {
-        scanf("%d", &u[i]);
+        int x;
+        cin >> x;
+        u.push_back(x);
     }
-    printf("Enter the number of subsets: ");
-    scanf("%d", &n);
-    struct subset s[n];
+
+    int n = 5;
+    cout << "Enter number of subsets: ";
+    cin >> n;
+
+    int arr[n] = {0};
+    int c[n];
+
     for (int i = 0; i < n; i++)
     {
-        printf("Enter the cost of subset %d: ", i + 1);
-        scanf("%d", &s[i].cost);
-        printf("Enter the number of items in subset %d: ", i + 1);
-        scanf("%d", &s[i].n);
-        for (int j = 0; j < s[i].n; j++)
+        int k;
+        cout << "Enter number of elements in subset " << i + 1 << ": ";
+        cin >> k;
+        cout << "Enter elements of subset " << i + 1 << ": ";
+        vector<int> x;
+        for (int j = 0; j < k; j++)
         {
-            printf("Enter the item %d: ", j + 1);
-            scanf("%d", &s[i].a[j]);
+            int y;
+            cin >> y;
+            x.push_back(y);
         }
+        s.push_back(x);
+        cout << "Enter the cost of subset " << i + 1 << ": ";
+        cin >> c[i];
     }
-    subsetCover(s, n, u, m);
 
+    int cost = subset(u, s, c, n, arr);
+    cout << "The solution vector is: ";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl
+         << "The cost is: " << cost;
     return 0;
 }
