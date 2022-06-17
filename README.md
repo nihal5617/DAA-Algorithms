@@ -19,3 +19,11 @@
 | Job Scheduling                 | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/jobScheduling.c">Click here<a/>|
 | Krushkals Algorithm            | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/krushkalsAlgorithm.c">Click here<a/>|
 | Optimal Storage                | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/optimalStorage.c">Click here<a/>|
+| Subset Cover                   | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/subsetCover.cpp">Click here<a/>|
+  
+## Dynamic Programming
+| ALgorithm                      | Link              |
+| --------------------------     | -----------------:|
+| 2-Machine FS                   | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/2-machineFS.c">Click here<a/>|
+| 3-Machine FS                   | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/3-machineFS.c">Click here<a/>|
+| Binomial Co-efficient          | <a href="https://github.com/nihal5617/DAA-Algorithms/blob/main/greedy/binomialCoefficient.c">Click here<a/>|
